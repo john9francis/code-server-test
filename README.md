@@ -8,24 +8,3 @@ docker build -t code-server .
 docker run --name code-container -e PASSWORD='mypassword' -d -v ./code-server:/home/code-server -p 8080:8080 code-server
 ```
 After your container is down, the files you have been working on should be saved in your local ./code-server/ folder.
-
-## Running on windows
-```sh
-docker build -t code-server .
-docker run --name code-container -e PASSWORD='mypassword' -d -v ${PWD}/code-server:/home/code-server -p 8080:8080 code-server
-```
-## Running on macos
-```sh
-docker build -t code-server .
-docker run --name code-container -e PASSWORD='mypassword' -d -v $(pwd)/code-server:/home/code-server -p 8080:8080 code-server
-```
-## Running on linux
-On linux, we specify an absolute path to /home/code-server
-```sh
-docker build -t code-server .
-docker run --name code-container -e PASSWORD='mypassword' -d -v /home/code-server:/home/code-server -p 8080:8080 code-server
-```
-## Starting up the container again
-```sh
-docker start code-container
-```
