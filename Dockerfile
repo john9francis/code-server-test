@@ -4,7 +4,7 @@ RUN apt update && apt install -y curl
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
-WORKDIR /src
+WORKDIR /home/code-server
 
 EXPOSE 8080
 
